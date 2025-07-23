@@ -2,6 +2,7 @@
 
 A simple secure Notes REST API built with Node.js, Express, MongoDB, and JWT Authentication with third party OAuth.
 
+
 ## Features
 
 - User Registration & Login
@@ -31,7 +32,7 @@ A simple secure Notes REST API built with Node.js, Express, MongoDB, and JWT Aut
 > Require JWT token in `Authorization: Bearer <token>` header
 
 - `GET /api/notes` – Get all notes of the logged-in user
-- `POST /api/notes` – Create a new note
+- `POST /api/notes/newnote` – Create a new note
 - `GET /api/notes/:id` – Get a specific note (byowner)
 - `PUT /api/notes/:id` – Update a note (by owner)
 - `DELETE /api/notes/:id` – Delete a note (by owner)
