@@ -10,7 +10,7 @@ router.post('/newnote',createnote) /// works
 router.get('/',getnotes)/// works
 router.get('/:id', getNoteById);
 router.put('/:id',updateNote)/// works
-router.delete('/:id',deleteNote)
+router.delete('/:id',deleteNote) /// works
 
 
 

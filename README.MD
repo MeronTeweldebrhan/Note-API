@@ -1,6 +1,6 @@
-# Notes API
+# SBA Innovate Inc. – Secure Notes API 
 
-A simple secure Notes REST API built with Node.js, Express, MongoDB, and JWT Authentication with third party OAuth.
+A secure, full-featured Notes REST API built with Node.js, Express, MongoDB, and JWT authentication, including GitHub OAuth via Passport.js.
 
 
 ## Features
@@ -10,8 +10,9 @@ A simple secure Notes REST API built with Node.js, Express, MongoDB, and JWT Aut
 - Create, Read, Update, Delete Notes
 - Authorization: Only owners can manage their notes
 - Github OAuth with Passport.js
-- CORS-enabled backend
- 
+- CORS-enabled backend frontend integration
+
+
 ## Tech Stack
 
 - Node.js
@@ -19,6 +20,40 @@ A simple secure Notes REST API built with Node.js, Express, MongoDB, and JWT Aut
 - MongoDB with Mongoose
 - JSON Web Tokens (JWT)
 - bcrypt for password hashing
+- Passport.js with passport-github2
+- CORS
+
+## Project Structure
+```
+project/
+│
+├── config/
+│   ├── connection.js         # MongoDB connection
+│   └── passport.js           # Passport GitHub strategy
+│
+├── controllers/
+│   ├── noteController.js     # CRUD logic for notes
+│   └── userController.js     # Auth & OAuth logic
+│
+├── middleware/
+│   └── authMiddleware.js     # JWT Auth & ownership checks
+│
+├── models/
+│   ├── User.js               # User model 
+│   └── Note.js               # Note/model
+│
+├── routes/
+│   ├── noteRoute.js          # /api/notes
+│   └── userRoute.js          # /api/users (auth + OAuth)
+│
+├── utils/
+│   └── auth.js               # JWT signing helpers
+│
+├── .env                      # Environment variables
+├── .gitignore
+├── package.json
+└── server.js       # Main entry point
+```
 
 ## Endpoints
 

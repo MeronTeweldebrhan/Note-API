@@ -29,11 +29,7 @@ const loginUser= async (req, res) => {
   const token = signToken(user);
   res.json({ token, user });
 };
-
-
-
-
-//redirect 
+// redirect To GitHub OAuth 
 const redirect = passport.authenticate('github', { scope: ['user:email'] });
 
 /// callback
@@ -45,7 +41,7 @@ const callbaack = [
   (req, res) => {
     const token = signToken(req.user);
     // You can pass the token to frontend in query param or a page handler
-    res.redirect({token,user:req.user});
+    res.send({ message: 'OAuth success', token, user: req.user });
   }
 ];
 
